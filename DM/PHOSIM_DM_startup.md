@@ -54,4 +54,6 @@ Phosim generally ignores unknown commands.  This is true in both the instance an
 The `-s` command line argument allows you to specify the chip to simulate in the format `R??_S??`.  This is useful to split jobs among cores, and also to do a test run.  I also find it useful in situations where my input catalog may have incomplete coverage on some chips.
 
 Phosim uses lots of intermediate files.  These can collide if you are running multiple instances on the same physical system.  There is a `-w` argument that should allow multiple jobs to run in parallel on the same installation, but I have not played with it much.  Instead, I copy the installation and run one instance per copy.
-Phosim uses many temporary files that can collide with each other if running multiple instances on the
+
+### Eimages
+The so-called e-images are output by phosim by default.  They are a really nice starting place if you don't want to go through the hastle of simulating calibration products (darks, flats).  They are essentially trivially ISR'd images.  They have all the astrophysical, atmospheric, and optical effects.  Some electronic effects are in them: bfe and treerings, but not all: e.g. no flatfielding is necessary (I don't think).
